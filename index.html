@@ -55,13 +55,44 @@
                 justify-content: center;
             }
         }
+
+        .icon {
+            font-size: 0.6em;
+            padding: 0;
+            display: inline-block;
+            text-decoration: none;
+            outline: none;
+        }
+
+        .icon::before {
+            transition: ease-in-out color 0.2s;
+            color: limegreen;
+        }
+
+        .stackexchange:hover::before, .stackexchange:focus::before, .stackexchange:active::before { color: #1E5397; }
+        .stackoverflow:hover::before, .stackoverflow:focus::before, .stackoverflow:active::before { color: #FE7A16; }
+        .superuser:hover::before, .superuser:focus::before, .superuser:active::before { color: #2EACE3; }
+        .telegram:hover::before, .telegram:focus::before, .telegram:active::before { color: #2CA5E0; }
+        .linkedin:hover::before, .linkedin:focus::before, .linkedin:active::before { color: #0077b5; }
+        .twitter:hover::before, .twitter:focus::before, .twitter:active::before { color: #1DA1F2; }
+        .github:hover::before, .github:focus::before, .github:active::before { color: white; }
+        .steam:hover::before, .steam:focus::before, .steam:active::before { color: white; }
+        .gmail:hover::before, .gmail:focus::before, .gmail:active::before { color: #D14836; }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>Nachtalb</h1>
     <div class="container-inner">
-        UwU
+        <a target="_blank" class="icon icon-brand236 stackexchange" href="https://stackexchange.com/users/5800839/?tab=accounts"></a>
+        <a target="_blank" class="icon icon-brand237 stackoverflow" href="https://stackoverflow.com/users/5699307/"></a>
+        <a target="_blank" class="icon icon-brand248 superuser" href="https://superuser.com/users/688595/"></a>
+        <a target="_blank" class="icon icon-brand252 telegram" href="https://t.me/Nachtalb"></a>
+        <a target="_blank" class="icon icon-brand139 linkedin" href="https://www.linkedin.com/in/nick-espig-b57422126/"></a>
+        <a target="_blank" class="icon icon-brand268 twitter" href="https://twitter.com/nachtalb88"></a>
+        <a target="_blank" class="icon icon-brand84 github" href="https://github.com/Nachtalb"></a>
+        <a target="_blank" class="icon icon-brand239 steam" href="http://steamcommunity.com/id/nachtalb88/"></a>
+        <a target="_blank" class="icon icon-brand88 gmail" href="mailto:nickespig@gmail.com"></a>
     </div>
 </div>
 </body>
