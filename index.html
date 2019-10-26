@@ -36,6 +36,7 @@
       max-width: 100%;
       word-wrap: break-word;
       text-align: center;
+      font-size: 3em;
     }
 
     .container {
@@ -45,23 +46,38 @@
       align-items: center;
     }
 
-    .container-inner {
-      text-align: center;
-    }
-
     @media screen and (min-width: 769px) {
       .container {
         height: 100%;
-        justify-content: center;
       }
     }
 
+    .container-inner {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
     .icon {
-      font-size: 0.6em;
-      padding: 0;
-      display: inline-block;
-      text-decoration: none;
+      align-items: center;
+      display: flex;
+      height: var(--icon-size);
+      justify-content: center;
+      margin: 0;
+      width: var(--icon-size);
+      --icon-size: 30vw;
+      font-size: calc(var(--icon-size) / 2);
       outline: none;
+      padding: 0;
+      text-decoration: none;
+    }
+
+    .break {
+      display: none;
+      flex-basis: 100%;
+      height: 0;
     }
 
     .icon::before {
@@ -104,34 +120,51 @@
     .github:hover::before, .github:focus::before, .github:active::before { color: white; }
     .steam:hover::before, .steam:focus::before, .steam:active::before { color: white; }
     .gmail:hover::before, .gmail:focus::before, .gmail:active::before { color: #D14836; }
+
+    @media screen and (min-width: 425px) and (orientation: landscape) {
+      .icon {
+        --icon-size: 20vw;
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      .container {
+        justify-content: center;
+      }
+
+      .icon {
+        --icon-size: 100px;
+      }
+
+      .break {
+        display: block;
+      }
+    }
+
   </style>
 </head>
 <body>
 <div class="container">
   <h1>Nachtalb</h1>
   <div class="container-inner">
-    <div class="level level-1">
-      <a target="_blank" class="icon icon-brand236 stackexchange" alt="Stackexchange: Nachtalb" title="Stackexchange: Nachtalb" href="https://stackexchange.com/users/5800839"></a>
-      <a target="_blank" class="icon icon-brand237 stackoverflow" alt="Stackoverflow: Nachtalb" title="Stackoverflow: Nachtalb" href="https://stackoverflow.com/users/5699307"></a>
-      <a target="_blank" class="icon icon-brand248 superuser" alt="Superuser: Nachtalb" title="Superuser: Nachtalb" href="https://superuser.com/users/688595"></a>
-      <a target="_blank" class="icon icon-brand252 telegram" alt="Telegram: Nachtalb" title="Telegram: Nachtalb" href="https://t.me/Nachtalb"></a>
-      <a target="_blank" class="icon icon-brand139 linkedin" alt="LinkedIn: Nick Espig" title="LinkedIn: Nick Espig" href="https://www.linkedin.com/in/nick-espig-b57422126"></a>
-      <a target="_blank" class="icon icon-brand268 twitter" alt="Twitter: nachtalb88" title="Twitter: nachtalb88" href="https://twitter.com/nachtalb88"></a>
-      <a target="_blank" class="icon icon-brand84 github" alt="GitHub: Nachtalb" title="GitHub: Nachtalb" href="https://github.com/Nachtalb"></a>
-      <a target="_blank" class="icon icon-brand239 steam" alt="Steam: nachtalb88" title="Steam: nachtalb88" href="http://steamcommunity.com/id/nachtalb88"></a>
-      <a target="_blank" class="icon icon-brand88 gmail" alt="E-Mail: contact@nachtalb.ch" title="E-Mail: contact@nachtalb.ch" href="mailto:contact@nachtalb.ch"></a>
-    </div>
-
-    <div class="level level-2">
-      <a target="_blank" class="icon svg-icon sabnzbd" alt="Sabnzbd 1" title="Sabnzbd 1" href="https://sab.nachtalb.io"></a>
-      <a target="_blank" class="icon svg-icon sabnzbd" alt="Sabnzbd 2" title="Sabnzbd 2" href="https://sab3.nachtalb.io"></a>
-      <a target="_blank" class="icon svg-icon lidarr" alt="Lidarr" title="Lidarr" href="https://lidarr.nachtalb.io"></a>
-      <a target="_blank" class="icon svg-icon radarr" alt="Radarr" title="Radarr" href="https://radarr3.nachtalb.io"></a>
-      <a target="_blank" class="icon svg-icon sonarr" alt="Sonarr" title="Sonarr" href="https://sonarr3.nachtalb.io"></a>
-      <a target="_blank" class="icon svg-icon jackett" alt="Jackett" title="Jackett" href="https://jackett3.nachtalb.io"></a>
-      <a target="_blank" class="icon svg-icon deluge" alt="Deluge" title="Deluge" href="https://deluge3.nachtalb.io"></a>
-      <a target="_blank" class="icon svg-icon plex" alt="Plex" title="Plex" href="https://plex.nachtalb.io"></a>
-    </div>
+    <a target="_blank" class="icon icon-brand236 stackexchange" alt="Stackexchange: Nachtalb" title="Stackexchange: Nachtalb" href="https://stackexchange.com/users/5800839"></a>
+    <a target="_blank" class="icon icon-brand237 stackoverflow" alt="Stackoverflow: Nachtalb" title="Stackoverflow: Nachtalb" href="https://stackoverflow.com/users/5699307"></a>
+    <a target="_blank" class="icon icon-brand248 superuser" alt="Superuser: Nachtalb" title="Superuser: Nachtalb" href="https://superuser.com/users/688595"></a>
+    <a target="_blank" class="icon icon-brand252 telegram" alt="Telegram: Nachtalb" title="Telegram: Nachtalb" href="https://t.me/Nachtalb"></a>
+    <a target="_blank" class="icon icon-brand139 linkedin" alt="LinkedIn: Nick Espig" title="LinkedIn: Nick Espig" href="https://www.linkedin.com/in/nick-espig-b57422126"></a>
+    <a target="_blank" class="icon icon-brand268 twitter" alt="Twitter: nachtalb88" title="Twitter: nachtalb88" href="https://twitter.com/nachtalb88"></a>
+    <a target="_blank" class="icon icon-brand84 github" alt="GitHub: Nachtalb" title="GitHub: Nachtalb" href="https://github.com/Nachtalb"></a>
+    <a target="_blank" class="icon icon-brand239 steam" alt="Steam: nachtalb88" title="Steam: nachtalb88" href="http://steamcommunity.com/id/nachtalb88"></a>
+    <a target="_blank" class="icon icon-brand88 gmail" alt="E-Mail: contact@nachtalb.ch" title="E-Mail: contact@nachtalb.ch" href="mailto:contact@nachtalb.ch"></a>
+    <div class="break"></div>
+    <a target="_blank" class="icon svg-icon sabnzbd" alt="Sabnzbd 1" title="Sabnzbd 1" href="https://sab.nachtalb.io"></a>
+    <a target="_blank" class="icon svg-icon sabnzbd" alt="Sabnzbd 2" title="Sabnzbd 2" href="https://sab3.nachtalb.io"></a>
+    <a target="_blank" class="icon svg-icon lidarr" alt="Lidarr" title="Lidarr" href="https://lidarr.nachtalb.io"></a>
+    <a target="_blank" class="icon svg-icon radarr" alt="Radarr" title="Radarr" href="https://radarr3.nachtalb.io"></a>
+    <a target="_blank" class="icon svg-icon sonarr" alt="Sonarr" title="Sonarr" href="https://sonarr3.nachtalb.io"></a>
+    <a target="_blank" class="icon svg-icon jackett" alt="Jackett" title="Jackett" href="https://jackett3.nachtalb.io"></a>
+    <a target="_blank" class="icon svg-icon deluge" alt="Deluge" title="Deluge" href="https://deluge3.nachtalb.io"></a>
+    <a target="_blank" class="icon svg-icon plex" alt="Plex" title="Plex" href="https://plex.nachtalb.io"></a>
   </div>
 </div>
 </body>
