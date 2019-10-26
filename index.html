@@ -69,6 +69,30 @@
       color: limegreen;
     }
 
+    .svg-icon::before {
+      background-size: contain;
+      background-repeat: no-repeat;
+      content: '';
+      display: block;
+      height: 1.3em;
+      transition: ease-in-out background-image 0.2s;
+      width: 1.3em;
+    }
+
+    .icon.sabnzbd::before { background-image: url('icons/sabnzbd-coloured.svg'); }
+    .icon.sonarr::before { background-image: url('icons/sonarr-coloured.svg'); }
+    .icon.lidarr::before { background-image: url('icons/lidarr-coloured.svg'); }
+    .icon.radarr::before { background-image: url('icons/radarr-coloured.svg'); }
+    .icon.deluge::before { background-image: url('icons/deluge-coloured.svg'); }
+    .icon.jackett::before { background-image: url('icons/jackett-coloured.png'); }
+
+    .icon.sabnzbd:hover::before, .icon.sabnzbd:focus::before, .icon.sabnzbd:active::before { background-image: url('icons/sabnzbd.svg'); }
+    .icon.sonarr:hover::before, .icon.sonarr:focus::before, .icon.sonarr:active::before { background-image: url('icons/sonarr.svg'); }
+    .icon.lidarr:hover::before, .icon.lidarr:focus::before, .icon.lidarr:active::before { background-image: url('icons/lidarr.svg'); }
+    .icon.radarr:hover::before, .icon.radarr:focus::before, .icon.radarr:active::before { background-image: url('icons/radarr.svg'); }
+    .icon.deluge:hover::before, .icon.deluge:focus::before, .icon.deluge:active::before { background-image: url('icons/deluge.svg'); }
+    .icon.jackett:hover::before, .icon.jackett:focus::before, .icon.jackett:active::before { background-image: url('icons/jackett.png'); }
+
     .stackexchange:hover::before, .stackexchange:focus::before, .stackexchange:active::before { color: #1E5397; }
     .stackoverflow:hover::before, .stackoverflow:focus::before, .stackoverflow:active::before { color: #FE7A16; }
     .superuser:hover::before, .superuser:focus::before, .superuser:active::before { color: #2EACE3; }
@@ -84,15 +108,27 @@
 <div class="container">
   <h1>Nachtalb</h1>
   <div class="container-inner">
-    <a target="_blank" class="icon icon-brand236 stackexchange" alt="Stackexchange: Nachtalb" title="Stackexchange: Nachtalb" href="https://stackexchange.com/users/5800839"></a>
-    <a target="_blank" class="icon icon-brand237 stackoverflow" alt="Stackoverflow: Nachtalb" title="Stackoverflow: Nachtalb" href="https://stackoverflow.com/users/5699307"></a>
-    <a target="_blank" class="icon icon-brand248 superuser" alt="Superuser: Nachtalb" title="Superuser: Nachtalb" href="https://superuser.com/users/688595"></a>
-    <a target="_blank" class="icon icon-brand252 telegram" alt="Telegram: Nachtalb" title="Telegram: Nachtalb" href="https://t.me/Nachtalb"></a>
-    <a target="_blank" class="icon icon-brand139 linkedin" alt="LinkedIn: Nick Espig" title="LinkedIn: Nick Espig" href="https://www.linkedin.com/in/nick-espig-b57422126"></a>
-    <a target="_blank" class="icon icon-brand268 twitter" alt="Twitter: nachtalb88" title="Twitter: nachtalb88" href="https://twitter.com/nachtalb88"></a>
-    <a target="_blank" class="icon icon-brand84 github" alt="GitHub: Nachtalb" title="GitHub: Nachtalb" href="https://github.com/Nachtalb"></a>
-    <a target="_blank" class="icon icon-brand239 steam" alt="Steam: nachtalb88" title="Steam: nachtalb88" href="http://steamcommunity.com/id/nachtalb88"></a>
-    <a target="_blank" class="icon icon-brand88 gmail" alt="E-Mail: contact@nachtalb.ch" title="E-Mail: contact@nachtalb.ch" href="mailto:contact@nachtalb.ch"></a>
+    <div class="level level-1">
+      <a target="_blank" class="icon icon-brand236 stackexchange" alt="Stackexchange: Nachtalb" title="Stackexchange: Nachtalb" href="https://stackexchange.com/users/5800839"></a>
+      <a target="_blank" class="icon icon-brand237 stackoverflow" alt="Stackoverflow: Nachtalb" title="Stackoverflow: Nachtalb" href="https://stackoverflow.com/users/5699307"></a>
+      <a target="_blank" class="icon icon-brand248 superuser" alt="Superuser: Nachtalb" title="Superuser: Nachtalb" href="https://superuser.com/users/688595"></a>
+      <a target="_blank" class="icon icon-brand252 telegram" alt="Telegram: Nachtalb" title="Telegram: Nachtalb" href="https://t.me/Nachtalb"></a>
+      <a target="_blank" class="icon icon-brand139 linkedin" alt="LinkedIn: Nick Espig" title="LinkedIn: Nick Espig" href="https://www.linkedin.com/in/nick-espig-b57422126"></a>
+      <a target="_blank" class="icon icon-brand268 twitter" alt="Twitter: nachtalb88" title="Twitter: nachtalb88" href="https://twitter.com/nachtalb88"></a>
+      <a target="_blank" class="icon icon-brand84 github" alt="GitHub: Nachtalb" title="GitHub: Nachtalb" href="https://github.com/Nachtalb"></a>
+      <a target="_blank" class="icon icon-brand239 steam" alt="Steam: nachtalb88" title="Steam: nachtalb88" href="http://steamcommunity.com/id/nachtalb88"></a>
+      <a target="_blank" class="icon icon-brand88 gmail" alt="E-Mail: contact@nachtalb.ch" title="E-Mail: contact@nachtalb.ch" href="mailto:contact@nachtalb.ch"></a>
+    </div>
+
+    <div class="level level-2">
+      <a target="_blank" class="icon svg-icon sabnzbd" alt="Sabnzbd 1" title="Sabnzbd 1" href="https://sab.nachtalb.io"></a>
+      <a target="_blank" class="icon svg-icon sabnzbd" alt="Sabnzbd 2" title="Sabnzbd 2" href="https://sab3.nachtalb.io"></a>
+      <a target="_blank" class="icon svg-icon lidarr" alt="Lidarr" title="Lidarr" href="https://lidarr.nachtalb.io"></a>
+      <a target="_blank" class="icon svg-icon radarr" alt="Radarr" title="Radarr" href="https://radarr3.nachtalb.io"></a>
+      <a target="_blank" class="icon svg-icon sonarr" alt="Sonarr" title="Sonarr" href="https://sonarr3.nachtalb.io"></a>
+      <a target="_blank" class="icon svg-icon jackett" alt="Jackett" title="Jackett" href="https://jackett3.nachtalb.io"></a>
+      <a target="_blank" class="icon svg-icon deluge" alt="Deluge" title="Deluge" href="https://deluge3.nachtalb.io"></a>
+    </div>
   </div>
 </div>
 </body>

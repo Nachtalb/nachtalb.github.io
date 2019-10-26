@@ -1,0 +1,12 @@
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="48px" height="48px" id="svg3440" sodipodi:version="0.32" inkscape:version="0.45" sodipodi:docbase="/home/zach/deluge/trunk" sodipodi:docname="deluge.svg" inkscape:export-filename="/home/zach/deluge.png" inkscape:export-xdpi="480" inkscape:export-ydpi="480" inkscape:output_extension="org.inkscape.output.svg.inkscape" sodipodi:modified="TRUE">
+  <defs id="defs3">
+    <linearGradient id="linearGradient4989">
+      <stop id="stop4995" offset="0.75000000" style="stop-color:#4074ae;stop-opacity:1.0000000;"/>
+    </linearGradient>
+    <radialGradient inkscape:collect="always" xlink:href="#linearGradient4989" id="radialGradient6115" cx="16.651781" cy="32.187485" fx="16.651781" fy="32.187485" r="17.089519" gradientTransform="matrix(1.486175,-1.536108,0.932321,0.902016,-38.10476,31.42646)" gradientUnits="userSpaceOnUse"/>
+  </defs>
+  <g id="layer1" inkscape:label="Layer 1" inkscape:groupmode="layer">
+    <path style="fill:url(#radialGradient6115);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.07523891px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 23.942923,0.9561338 L 37.330543,18.266721 C 46.998995,29.84687 41.49692,43.923891 26.7742,45.000491 C 6.0597413,45.582655 6.5086231,27.37483 11.255313,18.609381 L 23.942923,0.9561338 z " id="path2069" sodipodi:nodetypes="ccccc"/>
+    <path transform="matrix(-0.829136,1.052307,1.239307,7.58326e-2,26.32898,25.58605)" inkscape:r_cy="true" inkscape:r_cx="true" d="M 18.788838 12.493138 A 6.7175145 6.7175145 0 1 1  5.3538089,12.493138 A 6.7175145 6.7175145 0 1 1  18.788838 12.493138 z" sodipodi:ry="6.7175145" sodipodi:rx="6.7175145" sodipodi:cy="12.493138" sodipodi:cx="12.071323" id="path4941" style="opacity:0.21999996;color:black;fill:url(#radialGradient6098);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" sodipodi:type="arc"/>
+  </g>
+</svg>

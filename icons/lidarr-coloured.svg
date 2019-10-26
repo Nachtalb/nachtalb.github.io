@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" version="1.1" viewBox="0 0 1024 1024">
+  <g id="lidarr-group-logo" transform="translate(5e-6 .26738)">
+    <ellipse ry="410" rx="410" cy="512" cx="512" style="fill-opacity:null;fill:none;stroke-width:12;stroke: limegreen;"/>
+    <path d="m512 636l0-565 -330 565 330 0z" style="fill:none;stroke-width:16;stroke: limegreen;"/>
+    <path d="m512 388l0 565 330-565 -330 0z" style="fill:none;stroke-width:16;stroke: limegreen;"/>
+    <ellipse cx="512" cy="512" rx="150" ry="150" style="fill-opacity:null;fill: limegreen;stroke-opacity:null;stroke-width:null;stroke:null;"/>
+  </g>
+</svg>
