@@ -104,6 +104,16 @@
     .icon.jackett::before { background-image: url('icons/jackett-coloured.png'); }
     .icon.plex::before { background-image: url('icons/plex-coloured.svg'); }
 
+    /* Preload hover icons to remove wait for getting them the first time. */
+    .svg-icon::after { content: '' }
+    .icon.sabnzbd::after { background-image: url('icons/sabnzbd.svg'); }
+    .icon.sonarr::after { background-image: url('icons/sonarr.svg'); }
+    .icon.lidarr::after { background-image: url('icons/lidarr.svg'); }
+    .icon.radarr::after { background-image: url('icons/radarr.svg'); }
+    .icon.deluge::after { background-image: url('icons/deluge.svg'); }
+    .icon.jackett::after { background-image: url('icons/jackett.png'); }
+    .icon.plex::after { background-image: url('icons/plex.svg'); }
+
     .icon.sabnzbd:hover::before, .icon.sabnzbd:focus::before, .icon.sabnzbd:active::before { background-image: url('icons/sabnzbd.svg'); }
     .icon.sonarr:hover::before, .icon.sonarr:focus::before, .icon.sonarr:active::before { background-image: url('icons/sonarr.svg'); }
     .icon.lidarr:hover::before, .icon.lidarr:focus::before, .icon.lidarr:active::before { background-image: url('icons/lidarr.svg'); }
