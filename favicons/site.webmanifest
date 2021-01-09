@@ -1,6 +1,10 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Nachtalb",
+    "short_name": "Nachtalb",
+    "theme_color": "#000000",
+    "background_color": "#000000",
+    "start_url": "https://nachtalb.io",
+    "display": "standalone",
     "icons": [
         {
             "src": "https://nachtalb.ch/favicons/android-chrome-36x36.png",
@@ -47,9 +51,5 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ],
-    "theme_color": "#000000",
-    "background_color": "#000000",
-    "start_url": "https://nachtalb.ch",
-    "display": "standalone"
+    ]
 }
