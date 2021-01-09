@@ -2,10 +2,6 @@
 <html>
 <head>
   <title>Nachtalb</title>
-
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
-  <link rel="stylesheet" href="icomoon/style.css">
-
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
@@ -24,11 +20,15 @@
     body, html {
       height: 100%;
       margin: 0;
-      font-family: monospace;
       background: black;
       color: limegreen;
       font-size: 2em;
       -webkit-tap-highlight-color: transparent;
+      font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    }
+
+    a {
+      color: limegreen;
     }
 
     h1 {
@@ -47,97 +47,18 @@
       align-items: center;
     }
 
+    .console {
+      text-align: left;
+      width: 100%;
+    }
+
     @media screen and (min-width: 769px) {
+      body, html {
+        font-size: 1.2em;
+      }
+
       .container {
         height: 100%;
-      }
-    }
-
-    .container-inner {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .icon {
-      align-items: center;
-      display: flex;
-      height: var(--icon-size);
-      justify-content: center;
-      margin: 0;
-      width: var(--icon-size);
-      --icon-size: 30vw;
-      font-size: calc(var(--icon-size) / 2);
-      outline: none;
-      padding: 0;
-      text-decoration: none;
-    }
-
-    .break {
-      display: none;
-      flex-basis: 100%;
-      height: 0;
-    }
-
-    .icon::before {
-      transition: ease-in-out color 0.2s;
-      color: limegreen;
-    }
-
-    .svg-icon::before {
-      background-size: contain;
-      background-repeat: no-repeat;
-      content: '';
-      display: block;
-      height: 1.3em;
-      transition: ease-in-out background-image 0.2s;
-      width: 1.3em;
-    }
-
-    .icon.sabnzbd::before { background-image: url('icons/sabnzbd-coloured.svg'); }
-    .icon.sonarr::before { background-image: url('icons/sonarr-coloured.svg'); }
-    .icon.lidarr::before { background-image: url('icons/lidarr-coloured.svg'); }
-    .icon.radarr::before { background-image: url('icons/radarr-coloured.svg'); }
-    .icon.deluge::before { background-image: url('icons/deluge-coloured.svg'); }
-    .icon.jackett::before { background-image: url('icons/jackett-coloured.png'); }
-    .icon.plex::before { background-image: url('icons/plex-coloured.svg'); }
-    .icon.syncthing::before { background-image: url('icons/syncthing-coloured.svg'); }
-
-    /* Preload hover icons to remove wait for getting them the first time. */
-    .svg-icon::after { content: '' }
-    .icon.sabnzbd::after { background-image: url('icons/sabnzbd.svg'); }
-    .icon.sonarr::after { background-image: url('icons/sonarr.svg'); }
-    .icon.lidarr::after { background-image: url('icons/lidarr.svg'); }
-    .icon.radarr::after { background-image: url('icons/radarr.svg'); }
-    .icon.deluge::after { background-image: url('icons/deluge.svg'); }
-    .icon.jackett::after { background-image: url('icons/jackett.png'); }
-    .icon.plex::after { background-image: url('icons/plex.svg'); }
-    .icon.syncthing::after { background-image: url('icons/syncthing.svg'); }
-
-    .icon.sabnzbd:hover::before, .icon.sabnzbd:focus::before, .icon.sabnzbd:active::before { background-image: url('icons/sabnzbd.svg'); }
-    .icon.sonarr:hover::before, .icon.sonarr:focus::before, .icon.sonarr:active::before { background-image: url('icons/sonarr.svg'); }
-    .icon.lidarr:hover::before, .icon.lidarr:focus::before, .icon.lidarr:active::before { background-image: url('icons/lidarr.svg'); }
-    .icon.radarr:hover::before, .icon.radarr:focus::before, .icon.radarr:active::before { background-image: url('icons/radarr.svg'); }
-    .icon.deluge:hover::before, .icon.deluge:focus::before, .icon.deluge:active::before { background-image: url('icons/deluge.svg'); }
-    .icon.jackett:hover::before, .icon.jackett:focus::before, .icon.jackett:active::before { background-image: url('icons/jackett.png'); }
-    .icon.plex:hover::before, .icon.plex:focus::before, .icon.plex:active::before { background-image: url('icons/plex.svg'); }
-    .icon.syncthing:hover::before, .icon.syncthing:focus::before, .icon.syncthing:active::before { background-image: url('icons/syncthing.svg'); }
-
-    .stackexchange:hover::before, .stackexchange:focus::before, .stackexchange:active::before { color: #1E5397; }
-    .stackoverflow:hover::before, .stackoverflow:focus::before, .stackoverflow:active::before { color: #FE7A16; }
-    .superuser:hover::before, .superuser:focus::before, .superuser:active::before { color: #2EACE3; }
-    .telegram:hover::before, .telegram:focus::before, .telegram:active::before { color: #2CA5E0; }
-    .linkedin:hover::before, .linkedin:focus::before, .linkedin:active::before { color: #0077b5; }
-    .twitter:hover::before, .twitter:focus::before, .twitter:active::before { color: #1DA1F2; }
-    .github:hover::before, .github:focus::before, .github:active::before { color: white; }
-    .steam:hover::before, .steam:focus::before, .steam:active::before { color: white; }
-    .gmail:hover::before, .gmail:focus::before, .gmail:active::before { color: #D14836; }
-
-    @media screen and (min-width: 425px) and (orientation: landscape) {
-      .icon {
-        --icon-size: 20vw;
       }
     }
 
@@ -146,40 +67,84 @@
         justify-content: center;
       }
 
-      .icon {
-        --icon-size: 100px;
-      }
-
-      .break {
-        display: block;
+      .console {
+        width: 60%;
       }
     }
-
   </style>
 </head>
 <body>
 <div class="container">
   <h1>Nachtalb</h1>
-  <div class="container-inner">
-    <a target="_blank" class="icon icon-brand236 stackexchange" alt="Stackexchange: Nachtalb" title="Stackexchange: Nachtalb" href="https://stackexchange.com/users/5800839"></a>
-    <a target="_blank" class="icon icon-brand237 stackoverflow" alt="Stackoverflow: Nachtalb" title="Stackoverflow: Nachtalb" href="https://stackoverflow.com/users/5699307"></a>
-    <a target="_blank" class="icon icon-brand248 superuser" alt="Superuser: Nachtalb" title="Superuser: Nachtalb" href="https://superuser.com/users/688595"></a>
-    <a target="_blank" class="icon icon-brand252 telegram" alt="Telegram: Nachtalb" title="Telegram: Nachtalb" href="https://t.me/Nachtalb"></a>
-    <a target="_blank" class="icon icon-brand139 linkedin" alt="LinkedIn: Nick Espig" title="LinkedIn: Nick Espig" href="https://www.linkedin.com/in/nick-espig-b57422126"></a>
-    <a target="_blank" class="icon icon-brand268 twitter" alt="Twitter: nachtalb88" title="Twitter: nachtalb88" href="https://twitter.com/nachtalb88"></a>
-    <a target="_blank" class="icon icon-brand84 github" alt="GitHub: Nachtalb" title="GitHub: Nachtalb" href="https://github.com/Nachtalb"></a>
-    <a target="_blank" class="icon icon-brand239 steam" alt="Steam: nachtalb88" title="Steam: nachtalb88" href="http://steamcommunity.com/id/nachtalb88"></a>
-    <a target="_blank" class="icon icon-brand88 gmail" alt="E-Mail: contact@nachtalb.ch" title="E-Mail: contact@nachtalb.ch" href="mailto:contact@nachtalb.ch"></a>
-    <div class="break"></div>
-    <a target="_blank" class="icon svg-icon sabnzbd" alt="Sabnzbd" title="Sabnzbd" href="https://sab.nachtalb.io"></a>
-    <a target="_blank" class="icon svg-icon lidarr" alt="Lidarr" title="Lidarr" href="https://lidarr.nachtalb.io"></a>
-    <a target="_blank" class="icon svg-icon radarr" alt="Radarr" title="Radarr" href="https://radarr.nachtalb.io"></a>
-    <a target="_blank" class="icon svg-icon sonarr" alt="Sonarr" title="Sonarr" href="https://sonarr.nachtalb.io"></a>
-    <a target="_blank" class="icon svg-icon syncthing" alt="Syncthing" title="Syncthing" href="https://sync.nachtalb.io"></a>
-    <a target="_blank" class="icon svg-icon jackett" alt="Jackett" title="Jackett" href="https://jackett.nachtalb.io"></a>
-    <a target="_blank" class="icon svg-icon deluge" alt="Deluge" title="Deluge" href="https://deluge.nachtalb.io"></a>
-    <a target="_blank" class="icon svg-icon plex" alt="Plex" title="Plex" href="https://plex.nachtalb.io"></a>
-  </div>
+
+  <p class="console">anon@nachtalb.io: ~$ </p>
 </div>
+<script type="application/javascript">
+  let consoleNode = document.querySelector('.console');
+  let URLRe = new RegExp(/([a-zA-Z]*[/:]{0,3}[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?)/gi)
+  let forMobileRe = new RegExp(/(.*) -> (.*)/i)
+  let isMobile = window.outerWidth <= 768
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async function write(text, characterDelay, addPrefix) {
+    if (addPrefix) consoleNode.innerHTML += 'anon@nachtalb.ch: ~$ '
+
+    characterDelay = characterDelay === undefined ? 150 : characterDelay
+
+    isList = (typeof text === 'object')
+
+    for (var i = 0; i < text.length; i++) {
+      toAppend = text[i]
+      if (isMobile && isList && toAppend.match(forMobileRe)) {
+          toAppend = toAppend.replace(forMobileRe, '<a href="$2" target="_blank">$1</a>') + '</br>'
+      } else if (isList) {
+        toAppend = toAppend.replace(URLRe, '<a href="$1" target="_blank">$1</a>') + '</br>'
+      }
+
+      consoleNode.innerHTML += toAppend
+      await sleep(characterDelay)
+    }
+    consoleNode.innerHTML += '</br>'
+  }
+
+  async function run() {
+    await sleep(1000)
+    await write(' ls -l *')
+    await sleep(100)
+    await write(
+        [
+          'contact:',
+          'LinkedIn -> https://www.linkedin.com/in/nick-espig-b57422126/',
+          'Telegram -> https://t.me/Nachtalb',
+          'E-Mail -> mailto:na@nachtalb.io',
+          'Twitter -> https://twitter.com/nachtalb88',
+          '',
+          'development:',
+          'GitHub -> https://github.com/Nachtalb',
+          'StackOverflow -> https://stackoverflow.com/users/5699307',
+          'SuperUser -> https://superuser.com/users/688595',
+          'StackExchange -> https://stackexchange.com/users/5800839',
+          '',
+          'personal:',
+          'Steam -> http://steamcommunity.com/id/nachtalb88',
+          'Plex -> https://plex.nachtalb.io',
+          'IRC -> https://irc.nachtalb.io/',
+          'Sonarr -> https://sonarr.nachtalb.io/',
+          'Radarr -> https://radarr.nachtalb.io/',
+          'Lidarr -> https://lidarr.nachtalb.io/',
+          'Deluge -> https://deluge.nachtalb.io/',
+          'Sabnzbd -> https://sab.nachtalb.io/',
+          'Jackett -> https://jackett.nachtalb.io/',
+          'Syncthing -> https://sync.nachtalb.io/',
+        ],
+      50,
+    )
+  }
+
+  run()
+</script>
 </body>
 </html>
