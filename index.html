@@ -105,7 +105,7 @@
   async function write(text, characterDelay, addPrefix) {
     if (addPrefix) consoleNode.innerHTML += 'anon@nachtalb.ch: ~$ '
 
-    characterDelay = characterDelay === undefined ? 150 : characterDelay
+    characterDelay = characterDelay === undefined ? 75 : characterDelay
 
     isList = (typeof text === 'object')
 
@@ -124,7 +124,7 @@
   }
 
   async function run() {
-    await sleep(1000)
+    await sleep(300)
     await write(' ls -l *')
     await sleep(100)
     await write(
@@ -150,6 +150,8 @@
           'Lidarr -> https://lidarr.nachtalb.io/',
           'Deluge -> https://deluge.nachtalb.io/',
           'Sabnzbd -> https://sab.nachtalb.io/',
+          'Hydra 2 -> https://hydra.nachtalb.io/',
+          'Portainer -> https://docker.l1.nachtalb.io/',
           'Jackett -> https://jackett.nachtalb.io/',
           'Syncthing -> https://sync.nachtalb.io/',
         ],
