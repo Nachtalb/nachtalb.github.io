@@ -126,14 +126,13 @@
     if (addPrefix) consoleNode.innerHTML += 'anon@nachtalb.ch: ~$ '
 
     characterDelay = characterDelay === undefined ? 75 : characterDelay
+    isText = typeof lines === 'string'
 
-    if (typeof lines === 'string') {
-      console.innerHTML += lines
-    } else {
-      for (var i = 0; i < lines.length; i++) {
-        consoleNode.innerHTML += (isMobile || lines[i].length === 1 ? lines[i][0] : `${lines[i][0]} -> <a href="${lines[i][1]}" target="_blank">${lines[i][1]}</a>`) + '</br>'
-        await sleep(characterDelay)
-      }
+    for (var i = 0; i < lines.length; i++) {
+      if (isText) consoleNode.innerHTML += lines[i]
+      else consoleNode.innerHTML += (isMobile || lines[i].length === 1 ? lines[i][0] : `${lines[i][0]} -> <a href="${lines[i][1]}" target="_blank">${lines[i][1]}</a>`) + '</br>'
+
+      await sleep(characterDelay)
     }
     consoleNode.innerHTML += '</br>'
   }
