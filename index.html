@@ -46,7 +46,7 @@
       background-color: #000000b3;
       padding: 20px;
     }
-    
+
     h1 span {
       font-size: medium;
     }
@@ -117,31 +117,24 @@
 </div>
 <script type="application/javascript">
   let consoleNode = document.querySelector('.console');
-  let URLRe = new RegExp(/([a-zA-Z]*[/:]{0,3}[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?)/gi)
-  let forMobileRe = new RegExp(/(.*) -> (.*)/i)
   let isMobile = window.outerWidth < 768
 
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  async function write(text, characterDelay, addPrefix) {
+  async function write(lines, characterDelay, addPrefix) {
     if (addPrefix) consoleNode.innerHTML += 'anon@nachtalb.ch: ~$ '
 
     characterDelay = characterDelay === undefined ? 75 : characterDelay
 
-    isList = (typeof text === 'object')
-
-    for (var i = 0; i < text.length; i++) {
-      toAppend = text[i]
-      if (isMobile && isList && toAppend.match(forMobileRe)) {
-          toAppend = toAppend.replace(forMobileRe, '<a href="$2" target="_blank">$1</a>') + '</br>'
-      } else if (isList) {
-        toAppend = toAppend.replace(URLRe, '<a href="$1" target="_blank">$1</a>') + '</br>'
+    if (typeof lines === 'string') {
+      console.innerHTML += lines
+    } else {
+      for (var i = 0; i < lines.length; i++) {
+        consoleNode.innerHTML += (isMobile || lines[i].length === 1 ? lines[i][0] : `${lines[i][0]} -> <a href="${lines[i][1]}" target="_blank">${lines[i][1]}</a>`) + '</br>'
+        await sleep(characterDelay)
       }
-
-      consoleNode.innerHTML += toAppend
-      await sleep(characterDelay)
     }
     consoleNode.innerHTML += '</br>'
   }
@@ -152,32 +145,32 @@
     await sleep(100)
     await write(
         [
-          'socials:',
-          'LinkedIn -> https://www.linkedin.com/in/nick-espig-b57422126/',
-          'Telegram -> https://t.me/Nachtalb',
-          'E-Mail -> mailto:na@nachtalb.io',
-          'Twitter -> https://twitter.com/nachtalb88',
-          'Steam -> http://steamcommunity.com/id/nachtalb88',
-          '',
-          'development:',
-          'GitHub -> https://github.com/Nachtalb',
-          'StackOverflow -> https://stackoverflow.com/users/5699307',
-          'SuperUser -> https://superuser.com/users/688595',
-          'StackExchange -> https://stackexchange.com/users/5800839',
-          '',
-          'public privacy oriented services:',
-          'Overview -> https://s.nachtalb.io/',
-          'Nitter -> https://nitter.nachtalb.io/',
-          'Libreddit -> https://libreddit.nachtalb.io/',
-          'HasteBin -> https://bin.nachtalb.io/',
-          '',
-          'personal:',
-          'Plex -> https://plex.nachtalb.io',
-          'Sonarr -> https://sonarr.nachtalb.io/',
-          'Radarr -> https://radarr.nachtalb.io/',
-          'Lidarr -> https://lidarr.nachtalb.io/',
-          'Sabnzbd -> https://sab.nachtalb.io/',
-          'Prowlarr -> https://prowlarr.nachtalb.io/',
+          ['socials:'],
+          ['LinkedIn','https://www.linkedin.com/in/nick-espig-b57422126/'],
+          ['Telegram','https://t.me/Nachtalb/'],
+          ['E-Mail','mailto:na@nachtalb.io/'],
+          ['Twitter','https://twitter.com/nachtalb88/'],
+          ['Steam','http://steamcommunity.com/id/nachtalb88/'],
+          [''],
+          ['development:'],
+          ['GitHub','https://github.com/Nachtalb/'],
+          ['StackOverflow','https://stackoverflow.com/users/5699307/'],
+          ['SuperUser','https://superuser.com/users/688595/'],
+          ['StackExchange','https://stackexchange.com/users/5800839/'],
+          [''],
+          ['publicprivacyorientedservices:/'],
+          ['Overview','https://s.nachtalb.io/'],
+          ['Nitter','https://nitter.nachtalb.io/'],
+          ['Libreddit','https://libreddit.nachtalb.io/'],
+          ['HasteBin','https://bin.nachtalb.io/'],
+          [''],
+          ['personal:'],
+          ['Plex','https://plex.nachtalb.io/'],
+          ['Sonarr','https://sonarr.nachtalb.io/'],
+          ['Radarr','https://radarr.nachtalb.io/'],
+          ['Lidarr','https://lidarr.nachtalb.io/'],
+          ['Sabnzbd','https://sab.nachtalb.io/'],
+          ['Prowlarr','https://prowlarr.nachtalb.io/'],
         ],
       10,
     )
