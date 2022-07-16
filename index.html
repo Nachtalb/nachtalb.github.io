@@ -130,7 +130,7 @@
 
     for (var i = 0; i < lines.length; i++) {
       if (isText) consoleNode.innerHTML += lines[i]
-      else if (lines[i].length === 1) consoleNode.innerHTML += lines[i][0]
+      else if (lines[i].length === 1) consoleNode.innerHTML += lines[i][0] + '</br>'
       else consoleNode.innerHTML += (isMobile ? `<a href="${lines[i][1]}" target="_blank">${lines[i][0]}</a>` : `${lines[i][0]} -> <a href="${lines[i][1]}" target="_blank">${lines[i][1]}</a>`) + '</br>'
 
       await sleep(characterDelay)
