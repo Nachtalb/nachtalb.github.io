@@ -122,6 +122,8 @@
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
+  a_tag = (text, link) => `<a href="https://${link || text}" target="_blank">${text}</a>`
+
   async function write(lines, characterDelay, addPrefix) {
     if (addPrefix) consoleNode.innerHTML += 'anon@nachtalb.ch: ~$ '
 
@@ -131,7 +133,7 @@
     for (var i = 0; i < lines.length; i++) {
       if (isText) consoleNode.innerHTML += lines[i]
       else if (lines[i].length === 1) consoleNode.innerHTML += lines[i][0] + '</br>'
-      else consoleNode.innerHTML += (isMobile ? `<a href="https://${lines[i][1]}" target="_blank">${lines[i][0]}</a>` : `${lines[i][0]} -> <a href="https://${lines[i][1]}" target="_blank">${lines[i][1]}</a>`) + '</br>'
+      else consoleNode.innerHTML += (isMobile ? a_tag(...lines[i]) : lines[i][0] + " -> " + a_tag(lines[i][1])) + '</br>'
 
       await sleep(characterDelay)
     }
