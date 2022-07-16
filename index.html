@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Nachtalb</title>
 
@@ -22,11 +23,12 @@
       box-sizing: border-box;
     }
 
-    body, html {
+    body,
+    html {
       height: 100%;
       margin: 0;
-      background: black url("/images/3dvim.gif");
       color: limegreen;
+      background-color: black;
       font-size: 1.2em;
       -webkit-tap-highlight-color: transparent;
       font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
@@ -43,7 +45,6 @@
       word-wrap: break-word;
       text-align: center;
       font-size: 3em;
-      background-color: #000000f0;
       padding: 20px;
     }
 
@@ -106,80 +107,84 @@
         background: none;
       }
     }
-</style>
+  </style>
 </head>
+
 <body>
-<div class="container">
-  <h1>Nachtalb</h1>
+  <div class="container">
+    <h1>Nachtalb
+      <a href="https://github.com/Nachtalb/vimconfig" target="_blank"><img src="/images/vim_on_fire.gif" alt="Gotta love vim"></a>
+    </h1>
 
-  <p class="console"><span class="desktop-only">anon@nachtalb.io: </span>~$ </p>
-</div>
-<script type="application/javascript">
-  let consoleNode = document.querySelector('.console');
-  let isMobile = window.innerWidth < 768
+    <p class="console"><span class="desktop-only">anon@nachtalb.io: </span>~$ </p>
+  </div>
+  <script type="application/javascript">
+    let consoleNode = document.querySelector('.console');
+    let isMobile = window.innerWidth < 768
 
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
-  a_tag = (text, link) => `<a href="https://${link || text}" target="_blank">${text}</a>`
-
-  async function write(lines, characterDelay, addPrefix) {
-    if (addPrefix) consoleNode.innerHTML += 'anon@nachtalb.ch: ~$ '
-
-    characterDelay = characterDelay === undefined ? 75 : characterDelay
-    isText = typeof lines === 'string'
-
-    for (var i = 0; i < lines.length; i++) {
-      if (isText) consoleNode.innerHTML += lines[i]
-      else if (lines[i].length === 1) consoleNode.innerHTML += lines[i][0] + '</br>'
-      else consoleNode.innerHTML += (isMobile ? a_tag(...lines[i]) : lines[i][0] + " -> " + a_tag(lines[i][1])) + '</br>'
-
-      await sleep(characterDelay)
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
     }
-    consoleNode.innerHTML += '</br>'
-  }
 
-  async function run() {
-    await sleep(300)
-    await write(' ls -l *')
-    await sleep(100)
-    await write(
+    a_tag = (text, link) => `<a href="https://${link || text}" target="_blank">${text}</a>`
+
+    async function write(lines, characterDelay, addPrefix) {
+      if (addPrefix) consoleNode.innerHTML += 'anon@nachtalb.ch: ~$ '
+
+      characterDelay = characterDelay === undefined ? 75 : characterDelay
+      isText = typeof lines === 'string'
+
+      for (var i = 0; i < lines.length; i++) {
+        if (isText) consoleNode.innerHTML += lines[i]
+        else if (lines[i].length === 1) consoleNode.innerHTML += lines[i][0] + '</br>'
+        else consoleNode.innerHTML += (isMobile ? a_tag(...lines[i]) : lines[i][0] + " -> " + a_tag(lines[i][1])) + '</br>'
+
+        await sleep(characterDelay)
+      }
+      consoleNode.innerHTML += '</br>'
+    }
+
+    async function run() {
+      await sleep(300)
+      await write(' ls -l *')
+      await sleep(100)
+      await write(
         [
           ['socials:'],
-          ['LinkedIn','linkedin.com/in/nick-espig-b57422126'],
-          ['Telegram','t.me/Nachtalb'],
-          ['E-Mail','mailto:na@nachtalb.io'],
-          ['Twitter','twitter.com/nachtalb88'],
-          ['Steam','steamcommunity.com/id/nachtalb88'],
+          ['LinkedIn', 'linkedin.com/in/nick-espig-b57422126'],
+          ['Telegram', 't.me/Nachtalb'],
+          ['E-Mail', 'mailto:na@nachtalb.io'],
+          ['Twitter', 'twitter.com/nachtalb88'],
+          ['Steam', 'steamcommunity.com/id/nachtalb88'],
           [''],
           ['development:'],
-          ['GitHub','github.com/Nachtalb'],
-          ['StackOverflow','stackoverflow.com/users/5699307'],
-          ['SuperUser','superuser.com/users/688595'],
-          ['StackExchange','stackexchange.com/users/5800839'],
+          ['GitHub', 'github.com/Nachtalb'],
+          ['StackOverflow', 'stackoverflow.com/users/5699307'],
+          ['SuperUser', 'superuser.com/users/688595'],
+          ['StackExchange', 'stackexchange.com/users/5800839'],
           [''],
           ['public privacy oriented services:'],
-          ['Overview','s.nachtalb.io'],
-          ['Nitter','nitter.nachtalb.io'],
-          ['Libreddit','libreddit.nachtalb.io'],
-          ['HasteBin','bin.nachtalb.io'],
+          ['Overview', 's.nachtalb.io'],
+          ['Nitter', 'nitter.nachtalb.io'],
+          ['Libreddit', 'libreddit.nachtalb.io'],
+          ['HasteBin', 'bin.nachtalb.io'],
           [''],
           ['personal:'],
-          ['Plex','plex.nachtalb.io'],
-          ['Sonarr','sonarr.nachtalb.io'],
-          ['Radarr','radarr.nachtalb.io'],
-          ['Lidarr','lidarr.nachtalb.io'],
-          ['Prowlarr','prowlarr.nachtalb.io'],
-          ['Sabnzbd','sab.nachtalb.io'],
-          ['Torrent','torrent.nachtalb.io'],
-          ['Status','status.nachtalb.io/status/main'],
+          ['Plex', 'plex.nachtalb.io'],
+          ['Sonarr', 'sonarr.nachtalb.io'],
+          ['Radarr', 'radarr.nachtalb.io'],
+          ['Lidarr', 'lidarr.nachtalb.io'],
+          ['Prowlarr', 'prowlarr.nachtalb.io'],
+          ['Sabnzbd', 'sab.nachtalb.io'],
+          ['Torrent', 'torrent.nachtalb.io'],
+          ['Status', 'status.nachtalb.io/status/main'],
         ],
-      10,
-    )
-  }
+        10,
+      )
+    }
 
-  run()
-</script>
+    run()
+  </script>
 </body>
+
 </html>
