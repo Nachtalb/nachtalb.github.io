@@ -131,7 +131,7 @@
     for (var i = 0; i < lines.length; i++) {
       if (isText) consoleNode.innerHTML += lines[i]
       else if (lines[i].length === 1) consoleNode.innerHTML += lines[i][0] + '</br>'
-      else consoleNode.innerHTML += (isMobile ? `<a href="${lines[i][1]}" target="_blank">${lines[i][0]}</a>` : `${lines[i][0]} -> <a href="${lines[i][1]}" target="_blank">${lines[i][1]}</a>`) + '</br>'
+      else consoleNode.innerHTML += (isMobile ? `<a href="https://${lines[i][1]}" target="_blank">${lines[i][0]}</a>` : `${lines[i][0]} -> <a href="https://${lines[i][1]}" target="_blank">${lines[i][1]}</a>`) + '</br>'
 
       await sleep(characterDelay)
     }
@@ -145,33 +145,33 @@
     await write(
         [
           ['socials:'],
-          ['LinkedIn','https://www.linkedin.com/in/nick-espig-b57422126/'],
-          ['Telegram','https://t.me/Nachtalb/'],
+          ['LinkedIn','linkedin.com/in/nick-espig-b57422126/'],
+          ['Telegram','t.me/Nachtalb/'],
           ['E-Mail','mailto:na@nachtalb.io/'],
-          ['Twitter','https://twitter.com/nachtalb88/'],
-          ['Steam','http://steamcommunity.com/id/nachtalb88/'],
+          ['Twitter','twitter.com/nachtalb88/'],
+          ['Steam','steamcommunity.com/id/nachtalb88/'],
           [''],
           ['development:'],
-          ['GitHub','https://github.com/Nachtalb/'],
-          ['StackOverflow','https://stackoverflow.com/users/5699307/'],
-          ['SuperUser','https://superuser.com/users/688595/'],
-          ['StackExchange','https://stackexchange.com/users/5800839/'],
+          ['GitHub','github.com/Nachtalb/'],
+          ['StackOverflow','stackoverflow.com/users/5699307/'],
+          ['SuperUser','superuser.com/users/688595/'],
+          ['StackExchange','stackexchange.com/users/5800839/'],
           [''],
           ['public privacy oriented services:'],
-          ['Overview','https://s.nachtalb.io/'],
-          ['Nitter','https://nitter.nachtalb.io/'],
-          ['Libreddit','https://libreddit.nachtalb.io/'],
-          ['HasteBin','https://bin.nachtalb.io/'],
+          ['Overview','s.nachtalb.io/'],
+          ['Nitter','nitter.nachtalb.io/'],
+          ['Libreddit','libreddit.nachtalb.io/'],
+          ['HasteBin','bin.nachtalb.io/'],
           [''],
           ['personal:'],
-          ['Plex','https://plex.nachtalb.io/'],
-          ['Sonarr','https://sonarr.nachtalb.io/'],
-          ['Radarr','https://radarr.nachtalb.io/'],
-          ['Lidarr','https://lidarr.nachtalb.io/'],
-          ['Prowlarr','https://prowlarr.nachtalb.io/'],
-          ['Sabnzbd','https://sab.nachtalb.io/'],
-          ['Torrent','https://torrent.nachtalb.io/'],
-          ['Status','https://status.nachtalb.io/status/main'],
+          ['Plex','plex.nachtalb.io/'],
+          ['Sonarr','sonarr.nachtalb.io/'],
+          ['Radarr','radarr.nachtalb.io/'],
+          ['Lidarr','lidarr.nachtalb.io/'],
+          ['Prowlarr','prowlarr.nachtalb.io/'],
+          ['Sabnzbd','sab.nachtalb.io/'],
+          ['Torrent','torrent.nachtalb.io/'],
+          ['Status','status.nachtalb.io/status/main'],
         ],
       10,
     )
