@@ -130,7 +130,7 @@
 
     for (var i = 0; i < lines.length; i++) {
       if (isText) consoleNode.innerHTML += lines[i]
-      else consoleNode.innerHTML += (isMobile || lines[i].length === 1 ? lines[i][0] : `${lines[i][0]} -> <a href="${lines[i][1]}" target="_blank">${lines[i][1]}</a>`) + '</br>'
+      else consoleNode.innerHTML += (isMobile || lines[i].length === 1 ? `<a href="${lines[i][1]}" target="_blank">${lines[i][0]}</a>` : `${lines[i][0]} -> <a href="${lines[i][1]}" target="_blank">${lines[i][1]}</a>`) + '</br>'
 
       await sleep(characterDelay)
     }
@@ -167,8 +167,10 @@
           ['Sonarr','https://sonarr.nachtalb.io/'],
           ['Radarr','https://radarr.nachtalb.io/'],
           ['Lidarr','https://lidarr.nachtalb.io/'],
-          ['Sabnzbd','https://sab.nachtalb.io/'],
           ['Prowlarr','https://prowlarr.nachtalb.io/'],
+          ['Sabnzbd','https://sab.nachtalb.io/'],
+          ['Torrent','https://torrent.nachtalb.io/'],
+          ['Status','https://status.nachtalb.io/status/main'],
         ],
       10,
     )
