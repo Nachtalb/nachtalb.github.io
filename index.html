@@ -46,10 +46,16 @@
       text-align: center;
       font-size: 3em;
       padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
     }
 
     h1 span {
       font-size: medium;
+    }
+
+    .icon-vim {
+      padding-bottom: 50px;
     }
 
     .container {
@@ -113,8 +119,8 @@
 <body>
   <div class="container">
     <h1>Nachtalb
-      <a href="https://github.com/Nachtalb/vimconfig" target="_blank"><img src="/images/vim_on_fire.gif" alt="Gotta love vim"></a>
-      <a href="https://www.midjourney.com/app/users/91611229579149312/" target="_blank"><img src="/images/midjourney.svg" width="32" alt="AI Generated Art"></a>
+      <a class="title-icon icon-vim" href="https://github.com/Nachtalb/vimconfig" target="_blank"><img src="/images/vim_on_fire.gif" alt="Gotta love vim"></a>
+      <a class="title-icon icon-midjourney" href="https://www.midjourney.com/app/users/91611229579149312/" target="_blank"><img src="/images/midjourney.svg" width="50" alt="AI Generated Art"></a>
     </h1>
 
     <p class="console"><span class="desktop-only">anon@nachtalb.io: </span>~$ </p>
