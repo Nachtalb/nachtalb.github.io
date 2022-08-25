@@ -136,7 +136,7 @@
       return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    a_tag = (text, link) => `<a href="https://${link || text}" target="_blank">${text}</a>`
+    a_tag = (text, link) => `<a href="${((link || text).indexOf('mailto') !== -1) && '' || 'https://'}${link || text}" target="_blank">${text}</a>`
 
     async function write(lines, characterDelay, addPrefix) {
       if (addPrefix) consoleNode.innerHTML += 'anon@nachtalb.ch: ~$ '
