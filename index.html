@@ -1,189 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Nachtalb</title>
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-  <link rel="manifest" href="/favicons/site.webmanifest">
-  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#000000">
-  <link rel="shortcut icon" href="/favicons/favicon.ico">
-  <meta name="apple-mobile-web-app-title" content="Nachtalb">
-  <meta name="application-name" content="Nachtalb">
-  <meta name="msapplication-TileColor" content="#000000">
-  <meta name="msapplication-config" content="/favicons/browserconfig.xml">
-  <meta name="theme-color" content="#000000">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <style type="text/css">
-    * {
-      box-sizing: border-box;
-    }
-
-    body,
-    html {
-      height: 100%;
-      margin: 0;
-      color: limegreen;
-      background-color: black;
-      font-size: 1.2em;
-      -webkit-tap-highlight-color: transparent;
-      font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-    }
-
-    a {
-      color: limegreen;
-    }
-
-    h1 {
-      margin: 0;
-      font-weight: 100;
-      max-width: 100%;
-      word-wrap: break-word;
-      text-align: center;
-      font-size: 3em;
-      padding: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-    }
-
-    h1 span {
-      font-size: medium;
-    }
-
-    .icon-vim {
-      padding-bottom: 5px;
-      margin: 0 10px;
-    }
-
-    .container {
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1em;
-    }
-
-    .console {
-      text-align: left;
-      width: 100%;
-      margin: 0;
-      background-color: #000000f0;
-      padding: 20px;
-    }
-
-    br:last-child {
-      display: none;
-    }
-
-    @media screen and (min-width: 1024px) {
-      .container {
-        justify-content: center;
-      }
-
-      .console {
-        width: 80%;
-      }
-    }
-
-    @media screen and (min-width: 1280px) {
-      .console {
-        width: 60%;
-      }
-    }
-
-    @media screen and (max-width: 767px) {
-      .desktop-only {
-        display: none;
-      }
-
-      .container {
-        background-color: #000000b3;
-      }
-
-      h1 {
-        background: none;
-        padding: 0;
-      }
-
-      .console {
-        padding: 0;
-        background: none;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<title>a website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="a website. it exists.">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%;
+    background: #f4f1ea;
+    color: #1a1a1a;
+    font-family: ui-serif, Georgia, "Times New Roman", serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    cursor: default;
+  }
+  main { max-width: 480px; }
+  h1 {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+  }
+  h1 .blink {
+    display: inline-block;
+    width: 0.55ch;
+    background: #1a1a1a;
+    color: #1a1a1a;
+    animation: blink 1.1s steps(2, start) infinite;
+    margin-left: 2px;
+    vertical-align: -2px;
+  }
+  @keyframes blink { to { visibility: hidden; } }
+  p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0.8rem;
+  }
+  .tiny {
+    margin-top: 2.5rem;
+    font-size: 0.78rem;
+    color: #999;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  .tiny a { color: #999; text-decoration: none; border-bottom: 1px dotted #bbb; }
+  .tiny a:hover { color: #1a1a1a; border-bottom-color: #1a1a1a; }
+  #log {
+    margin-top: 1.4rem;
+    font-size: 0.85rem;
+    color: #888;
+    font-style: italic;
+    min-height: 1.2em;
+  }
+</style>
 </head>
-
 <body>
-  <div class="container">
-    <h1>Nachtalb
-      <a class="title-icon icon-vim" href="https://github.com/Nachtalb/vimconfig" target="_blank" title="Vim Config ❤️"><img src="/images/vim_on_fire.gif" alt="Vim Config ❤️"></a>
-    </h1>
+  <main>
+    <h1>hello<span class="blink">&nbsp;</span></h1>
+    <p>this is a website.</p>
+    <p>it exists.</p>
+    <p>that is, frankly, the whole pitch.</p>
+    <div id="log"></div>
+    <div class="tiny">
+      <span id="counter">you are guest #1</span> &middot;
+      <a href="#" id="more">more nothing</a>
+    </div>
+  </main>
+<script>
+  // a very official guest counter (do not audit)
+  const c = document.getElementById('counter');
+  c.textContent = 'you are guest #' + Math.floor(Math.random() * 90000 + 10000);
 
-    <p class="console"><span class="desktop-only">anon@nachtalb.io: </span>~$ </p>
-  </div>
-  <script type="application/javascript">
-    let consoleNode = document.querySelector('.console');
-    let isMobile = window.innerWidth < 768
-
-    function sleep(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    a_tag = (text, link) => `<a href="${((link || text).indexOf('mailto') === -1) && 'https://' || ''}${link || text}" target="_blank">${text}</a>`
-
-    async function write(lines, characterDelay, addPrefix) {
-      if (addPrefix) consoleNode.innerHTML += 'anon@nachtalb.ch: ~$ '
-
-      characterDelay = characterDelay === undefined ? 75 : characterDelay
-      isText = typeof lines === 'string'
-
-      for (var i = 0; i < lines.length; i++) {
-        if (isText) consoleNode.innerHTML += lines[i]
-        else if (lines[i].length === 1) consoleNode.innerHTML += lines[i][0] + '</br>'
-        else consoleNode.innerHTML += (isMobile ? a_tag(...lines[i]) : lines[i][0] + " -> " + a_tag(lines[i][1])) + '</br>'
-
-        await sleep(characterDelay)
-      }
-      consoleNode.innerHTML += '</br>'
-    }
-
-    async function run() {
-      await sleep(300)
-      await write(' ls -l *')
-      await sleep(100)
-      await write(
-        [
-          ['socials:'],
-          ['Personal Website', 'nickespig.ch'],
-          ['LinkedIn', 'linkedin.com/in/nick-espig-b57422126'],
-          ['Telegram', 't.me/Nachtalb'],
-          ['E-Mail', 'mailto:na@nachtalb.io'],
-          ['Twitter', 'twitter.com/nachtalb88'],
-          ['Steam', 'steamcommunity.com/id/nachtalb88'],
-          [''],
-          ['development:'],
-          ['GitHub', 'github.com/Nachtalb'],
-          ['StackOverflow', 'stackoverflow.com/users/5699307'],
-          ['SuperUser', 'superuser.com/users/688595'],
-          ['StackExchange', 'stackexchange.com/users/5800839'],
-          [''],
-          ['public services:'],
-          ['HasteBin', 'bin.naa.gg'],
-          ['Redlib', 'r.naa.gg'],
-        ],
-        10,
-      )
-    }
-
-    run()
-  </script>
-  <script async src="https://ackee.nachtalb.io/tracker.js" data-ackee-server="https://ackee.nachtalb.io" data-ackee-domain-id="d30dd224-9341-4aa5-8aef-27585be6a4c7" data-ackee-opts='{ "detailed": true }'></script>
+  const log = document.getElementById('log');
+  const nothings = [
+    'still nothing.',
+    'a deeper nothing.',
+    'profound nothing.',
+    'okay now you\'re just being thorough.',
+    'nothing again. art.',
+    'truly impressive commitment to nothing.',
+    'you have unlocked: nothing.',
+    'fine. here\'s a pebble. 🪨 ...just kidding, nothing.',
+    'this is the last nothing. probably.',
+    'i lied. one more nothing.'
+  ];
+  let i = 0;
+  document.getElementById('more').addEventListener('click', (e) => {
+    e.preventDefault();
+    log.textContent = nothings[i % nothings.length];
+    i++;
+  });
+</script>
 </body>
-
 </html>
